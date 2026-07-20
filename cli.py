@@ -30,3 +30,17 @@ def add_task(args):
         return
     task = Task(args.title)
     project.add_task(task)
+# Code snippet to print the tasks belongint to a user
+def view_users(args):
+    # access User name
+    for name,user in users.items():
+        print(f"User: {name}")
+        # Acess a list of projects
+        for project in user.projetcs:
+            print (f"Project {project.title}")
+            #Access the tasks belonging to this user
+            for task in project.tasks:
+                if task.completed:
+                    print(f"{task.title} complete")
+                else:
+                    print(f"{task.title} pending")
