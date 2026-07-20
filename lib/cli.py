@@ -1,7 +1,8 @@
 import argparse
 from .models import User,Project,Task
+from .storage import save_users,load_users
 
-users = {}
+users = load_users()
 
 def add_user(args):
     if args.name in users:
@@ -46,7 +47,7 @@ def view_users(args):
                     print(f"{task.title} pending")
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description = "Project Manager")
 
     subparsers = parser.add_subparsers()
 
@@ -76,6 +77,7 @@ def main():
 
     if hasattr(args, "func"):
         args.func(args)
+        save_users(users)
 
 
 if __name__ == "__main__":
