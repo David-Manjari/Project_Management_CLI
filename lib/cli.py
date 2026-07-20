@@ -44,3 +44,39 @@ def view_users(args):
                     print(f"{task.title} complete")
                 else:
                     print(f"{task.title} pending")
+
+def main():
+    parser = argparse.ArgumentParser()
+
+    subparsers = parser.add_subparsers()
+
+    # add-user
+    user_parser = subparsers.add_parser("add-user")
+    user_parser.add_argument("--name", required=True)
+    user_parser.set_defaults(func=add_user)
+
+    # add-project
+    project_parser = subparsers.add_parser("add-project")
+    project_parser.add_argument("--user", required=True)
+    project_parser.add_argument("--title", required=True)
+    project_parser.set_defaults(func=add_project)
+
+    # add-task
+    task_parser = subparsers.add_parser("add-task")
+    task_parser.add_argument("--user", required=True)
+    task_parser.add_argument("--project", required=True)
+    task_parser.add_argument("--title", required=True)
+    task_parser.set_defaults(func=add_task)
+
+    # view
+    view_parser = subparsers.add_parser("view")
+    view_parser.set_defaults(func=view_users)
+
+    args = parser.parse_args()
+
+    if hasattr(args, "func"):
+        args.func(args)
+
+
+if __name__ == "__main__":
+    main()

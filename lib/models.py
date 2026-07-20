@@ -22,17 +22,17 @@ class Project:
                 return task
         return None
     
-    class User:
-        def __init__(self,name):
-            self.name = name
-            self.projects = []
+class User:
+    def __init__(self,name):
+        self.name = name
+        self.projects = []
 
-        def add_project (self,project):
-            self.projects.append(project)
-            print(f"project {project.title} added to {self.name}")
-        
-        def get_project(self, title):
-            for project in self.projects:
-                if project.title == title:
-                    return project
-            return None
+    def add_project (self,project):
+        self.projects.append(project)
+        print(f"project {project.title} added to {self.name}")
+    
+    def get_project(self, title):
+        for project in self.projects:
+            if project.title == title:
+                return project
+        return None
