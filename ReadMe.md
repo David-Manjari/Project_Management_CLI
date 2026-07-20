@@ -1,7 +1,7 @@
 # PROJECT MANAGEMENT CLI
 
 ## Description
-This is a project  curated to help user with creating and managing projects from different users with different tasks. It then provides a description of the user's projects and tasks.
+This is a project  curated to help user with creating and managing projects from different users with different tasks. It then provides a description of the user's projects and tasks.  
 It provides :
  - The User
  - The projects the user has
