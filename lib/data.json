@@ -2,7 +2,12 @@
     "Alex": {
         "projects": {
             "CLI Tool": {
-                "tasks": []
+                "tasks": [
+                    {
+                        "title": "Create a Cli Tool",
+                        "completed": false
+                    }
+                ]
             }
         }
     }

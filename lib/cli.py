@@ -37,7 +37,7 @@ def view_users(args):
     for name,user in users.items():
         print(f"User: {name}")
         # Acess a list of projects
-        for project in user.projetcs:
+        for project in user.projects:
             print (f"Project {project.title}")
             #Access the tasks belonging to this user
             for task in project.tasks:
